@@ -28,5 +28,5 @@ pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(abs(pmatrix),
                 labels=dict(x="state variables", y="participation factor"),
-                y=x)
+                )
 st.plotly_chart(fig, theme="streamlit")
