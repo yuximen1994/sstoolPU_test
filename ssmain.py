@@ -24,7 +24,7 @@ eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
-fig = px.imshow(z, text_auto=True, aspect="auto")
+fig = px.imshow(pmatrix, text_auto=True, aspect="auto")
 st.plotly_chart(fig, theme="streamlit")
 
 st.bar_chart(Xss)
