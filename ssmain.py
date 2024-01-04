@@ -24,8 +24,7 @@ for i in range(len(Xss)):
 Asys = np.array(Asys).astype(np.float64)
 eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
-pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
+pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(abs(pmatrix))
-
 st.plotly_chart(fig, theme="streamlit")
