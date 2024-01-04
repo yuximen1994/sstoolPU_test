@@ -28,7 +28,7 @@ pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(abs(pmatrix))
 
-tab = st.tabs(["Participation Factor Analysis"])
+tab = st.tabs("Participation Factor Analysis")
 with tab:
     st.plotly_chart(fig, theme="streamlit")
 
