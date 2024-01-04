@@ -27,6 +27,6 @@ lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(abs(pmatrix),
-                labels=dict(x="state variables", y="participation factor"),
+                labels=dict(x="modes", y="state variables"),
                 )
 st.plotly_chart(fig, theme="streamlit")
