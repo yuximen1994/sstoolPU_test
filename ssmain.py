@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 from ssfunc import pf_calc
 from ssfunc import lsm_sys
 from ssdata import case_3bus
@@ -23,5 +24,7 @@ eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
+fig = px.imshow(z, text_auto=True, aspect="auto")
+st.plotly_chart(fig, theme="streamlit")
 
 st.bar_chart(Xss)
