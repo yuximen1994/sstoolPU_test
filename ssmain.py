@@ -24,9 +24,8 @@ eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
-fig = px.imshow(pmatrix, text_auto=True, aspect="auto")
-tab = st.tabs(["Streamlit theme"])
-with tab:
-    st.plotly_chart(fig, theme="streamlit")
+fig, ax = plt.subplots()
+sns.heatmap(pmatrix, ax=ax)
+st.write(fig)
 
 st.bar_chart(Xss)
