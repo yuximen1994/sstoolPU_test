@@ -28,10 +28,8 @@ pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(abs(pmatrix))
 
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
-with tab1:
+tab = st.tabs(["Participation Factor Analysis"])
+with tab:
     st.plotly_chart(fig, theme="streamlit")
-with tab2:
-    st.plotly_chart(fig, theme=None)
 
 st.bar_chart(Xss)
