@@ -29,5 +29,3 @@ pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 fig = px.imshow(abs(pmatrix))
 
 st.plotly_chart(fig, theme="streamlit")
-
-st.bar_chart(Xss)
