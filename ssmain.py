@@ -26,7 +26,7 @@ pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
 fig = px.imshow(pmatrix, text_auto=True, aspect="auto")
 tab = st.tabs(["Streamlit theme"])
-    with tab:
-        st.plotly_chart(fig, theme="streamlit")
+with tab:
+       st.plotly_chart(fig, theme="streamlit")
 
 st.bar_chart(Xss)
