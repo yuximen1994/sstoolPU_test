@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
 from ssfunc import pf_calc
 from ssfunc import lsm_sys
 from ssdata import case_3bus
