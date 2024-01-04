@@ -26,7 +26,7 @@ eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
-fig = px.imshow([pmatrix])
+fig = px.imshow(pmatrix)
 
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
 with tab1:
