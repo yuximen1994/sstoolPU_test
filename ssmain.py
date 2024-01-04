@@ -17,8 +17,6 @@ Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
 Asys = xdot.jacobian(x)
 for i in range(len(Xss)):
     Asys = Asys.subs([(x[i], Xss[i])])
-    print(x[i])
-    print(Xss[I])
 
 Asys = np.array(Asys).astype(np.float64)
 eigvals, eigenvectors = np.linalg.eig(Asys)
