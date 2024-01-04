@@ -32,4 +32,4 @@ fig = px.imshow(abs(pmatrix),
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ']
                 )
-st.plotly_chart(fig, theme="streamlit")
+st.plotly_chart(fig, height=800, theme="streamlit")
