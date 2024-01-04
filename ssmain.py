@@ -24,4 +24,4 @@ lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.dot(eigenvectors,np.transpose(lefteigenvectors))
 
 
-st.bar_chart(chart_data)
+st.bar_chart(Xss)
