@@ -14,9 +14,20 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 # Define your images
 images = {
      'GFM_Droop-GFM_Droop': 'fig/DroopDroop.png',
+     'GFM_Droop-GFM_VSM': 'fig/DroopVSM.png',
      'GFM_Droop-GFL': 'fig/DroopGFL.png',
+     'GFM_Droop-SG': 'fig/SGDroop.png',
      'GFM_VSM-GFM_Droop': 'fig/DroopVSM.png',
+     'GFM_VSM-GFM_VSM': 'fig/VSMVSM.png',
+     'GFM_VSM-GFL': 'fig/VSMGFL.png',
      'GFM_VSM-SG': 'fig/SGVSM.png',
+     'GFL-GFM_Droop': 'fig/DroopGFL.png',
+     'GFL-GFM_VSM': 'fig/VSMGFL.png',
+     'GFL-SG': 'fig/SGGFL.png',
+     'SG-GFM_Droop': 'fig/SGDroop.png',
+     'SG-GFM_VSM': 'fig/SGVSM.png',
+     'SG-GFL': 'fig/SGGFL.png',
+     'SG-SG': 'fig/SGSG.png',
 }
 
 # Create the selectboxes
