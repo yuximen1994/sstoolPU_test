@@ -72,5 +72,8 @@ fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
 
 df = pd.DataFrame(columns = ["mode", "real", "image", "frequency(Hz)", "damping ratio"])
+for i, row in df.iterrows():
+    df.ix[i]['mode'] = i
+
 
 st.table(df)
