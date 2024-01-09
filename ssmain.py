@@ -72,7 +72,7 @@ fig = px.imshow(abs(pmatrix),
 fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
 
-mode = eigvals.real
+mode = range(1,len(eigvals))
 realpart = eigvals.real
 imagpart = eigvals.imag
 frequency = eigvals.imag/2/math.pi
