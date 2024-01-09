@@ -39,7 +39,9 @@ selected_image = images.get(f'{selectbox1}-{selectbox2}')
 
 # Display the image
 if selected_image:
-    st.image(selected_image)
+    image = st.image(selected_image)
+    new_image = image.resize((2790, 5500))
+    st.image(new_image)
 else:
     st.write("No control diagram available.")
 ######################################
