@@ -73,13 +73,12 @@ st.plotly_chart(fig, height=800, theme="streamlit")
 
 mode = eigvals.real
 real = eigvals.real
-image = eigvals.real
-frequency = eigvals.real
-dampingratio = eigvals.real
+image = eigvals.imag
+frequency = eigvals.imag/2/math.pi
+dampingratio = numpy.divide(-eigvals.real,eigvals.real.square+eigvals.imag.square)
 list_of_tuples = list(zip(mode, real, image, frequency, dampingratio)) 
 df = pd.DataFrame(list_of_tuples,
                  columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
-#df = pd.DataFrame([eigvals.real,eigvals.real,eigvals.real,eigvals.real,eigvals.real],)
 
 
 st.table(df)
