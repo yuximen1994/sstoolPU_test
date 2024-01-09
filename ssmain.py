@@ -77,7 +77,7 @@ realpart = eigvals.real
 imagpart = eigvals.imag
 frequency = eigvals.imag/2/math.pi
 dampingratio = -eigvals.real/eigvals.real
-list_of_tuples = list(zip(mode, real, image, frequency, dampingratio)) 
+list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
 df = pd.DataFrame(list_of_tuples,
                  columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
 
