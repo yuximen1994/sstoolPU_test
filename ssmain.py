@@ -70,3 +70,7 @@ fig = px.imshow(abs(pmatrix),
                 )
 fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
+
+df = pd.DataFrame(columns = ["mode", "real", "image", "frequency(Hz)", "damping ratio"])
+
+st.table(df)
