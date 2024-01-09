@@ -71,9 +71,9 @@ fig = px.imshow(abs(pmatrix),
 fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
 
-df = pd.DataFrame(columns = ["mode", "real", "image", "frequency(Hz)", "damping ratio"])
-for i in range(0,5):
-    df.at[i]['mode'] = i
+df = pd.DataFrame([eigvals.real,eigvals.real,eigvals.real,eigvals.real,eigvals.real],columns = ["mode", "real", "image", "frequency(Hz)", "damping ratio"])
+#for i in range(0,5):
+#    df.at[i]['mode'] = i
 
 
 st.table(df)
