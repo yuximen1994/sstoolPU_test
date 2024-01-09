@@ -78,8 +78,8 @@ frequency = eigvals.real
 dampingratio = eigvals.real
 list_of_tuples = list(zip(mode, real, image, frequency, dampingratio)) 
 df = pd.DataFrame(list_of_tuples,
-                  df = pd.DataFrame([eigvals.real,eigvals.real,eigvals.real,eigvals.real,eigvals.real],))
-df = pd.DataFrame([eigvals.real,eigvals.real,eigvals.real,eigvals.real,eigvals.real],)
+                 columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
+#df = pd.DataFrame([eigvals.real,eigvals.real,eigvals.real,eigvals.real,eigvals.real],)
 
 
 st.table(df)
