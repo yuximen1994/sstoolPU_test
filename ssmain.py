@@ -57,8 +57,8 @@ Asys = xdot.jacobian(x)
 for i in range(len(Xss)):
     Asys = Asys.subs([(x[i], Xss[I])])
 
-Asys = Asys[2:,2:]
 Asys = np.array(Asys).astype(np.float64)
+Asys = Asys[2:,2:]
 eigvals, eigenvectors = np.linalg.eig(Asys)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
