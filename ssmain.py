@@ -10,6 +10,30 @@ from ssdata import case_3bus
 
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
+######################################
+# Define your images
+images = {
+     'GFM_Droop-GFM_Droop': '1.png',
+     'GFM_Droop-GFL': '2.png',
+     'GFM_VSM-GFM_Droop': '1.png',
+     'GFM_VSM-SG': '2.png',
+}
+
+# Create the selectboxes
+selectbox1 = st.selectbox('What control strategy do you want to select for the 1st inverter?', ['GFM_Droop', 'GFM_VSM', 'GFL', 'SG'], index=None, placeholder="Select control method...",)
+selectbox2 = st.selectbox('What control strategy do you want to select for the 2nd inverter?', ['GFM_Droop', 'GFM_VSM', 'GFL', 'SG'], index=None, placeholder="Select control method...",)
+
+# Determine which image to display
+selected_image = images.get(f'{selectbox1}-{selectbox2}')
+
+# Display the image
+if selected_image:
+    st.image(selected_image)
+else:
+    st.write("No control diagram available.")
+######################################
+
+
 sysData = case_3bus()
 x, xdot = lsm_sys(sysData)
 Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
