@@ -73,7 +73,7 @@ st.plotly_chart(fig, height=800, theme="streamlit")
 
 df = pd.DataFrame(columns = ["mode", "real", "image", "frequency(Hz)", "damping ratio"])
 for i, row in df.iterrows():
-    df.index[i]['mode'] = i
+    df.at[i]['mode'] = i
 
 
 st.table(df)
