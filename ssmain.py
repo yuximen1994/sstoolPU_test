@@ -70,16 +70,6 @@ st.plotly_chart(fig, height=800, theme="streamlit")
 #input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
 #number = int(input_number)
 
-labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-sizes = [15, 30, 45, 10]
-explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-figpie, axpie = plt.subplots()
-axpie.pie(pmatrixabs[:,10], explode=np.zeros(NumElement), labels=stateVariableNames, autopct='%1.1f%%',
-          shadow=False, startangle=90)
-axpie.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-st.pyplot(figpie)
-
-
 df = pd.DataFrame(pmatrixabs, columns=modeNames)
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
