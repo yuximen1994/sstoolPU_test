@@ -65,7 +65,7 @@ NumElement = len(eigvals)
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
-
+px.pie(pmatrix[input_number,:], values='pop', names='country', title='Population of European continent')
 # Check if the input is a number and within the desired range
 if input_number:
     try:
