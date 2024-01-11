@@ -30,19 +30,10 @@ sidebar1 = st.sidebar.selectbox(
     "What configuration do you want to select for the 1st generator?",
     ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select configuration...",
 )
-
 sidebar2 = st.sidebar.selectbox(
     "What configuration do you want to select for the 2nd generator?",
     ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select configuration...",
 )
-
-# Define the range of numbers
-#numbers = list(range(1, 10))  # This creates a list of numbers from 1 to 10
-
-#sidebar3 = st.sidebar.selectbox(
-#    "Which mode do you want to select?",
-#     numbers, index=0,
-#)
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select? (1-10)")
