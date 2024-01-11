@@ -79,7 +79,7 @@ if input_number:
             df.insert(0, "statevariables", stateVariableNames, True)           
             df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
             fig = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
-            fig.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.5,'xanchor':'center'})
+            fig.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.0,'xanchor':'center'})
             st.plotly_chart(fig, height=800, theme="streamlit")
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(numeigs)+'.')
