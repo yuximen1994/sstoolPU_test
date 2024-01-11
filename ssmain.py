@@ -77,6 +77,13 @@ axpie.pie(pmatrixabs[:,10], explode=np.zeros(NumElement), labels=stateVariableNa
 axpie.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(figpie)
 
+
+df = pd.DataFrame(pmatrixabs, columns=stateVariableNames)
+# Represent only state variables with relatively larger participation factor
+df.loc[df[stateVariableNames(1)] >= 0.2, 'state variable'] = 'Other state variables'
+fig = px.pie(df, values='stateVariableNames(1)', names='state variables', title='Population of European continent')
+fig.show()
+
 # Check if the input is a number and within the desired range
 if input_number:
     try:
