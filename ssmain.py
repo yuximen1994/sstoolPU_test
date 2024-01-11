@@ -88,9 +88,9 @@ if input_number:
 
 col1, col2, col3 = st.columns(3,gap="large")
 with col1:
-   st.plotly_chart(figheatmap, height=800, theme="streamlit")
+   st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
-   st.plotly_chart(figpie, height=800, theme="streamlit")
+   st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
 
 
 mode = range(1,len(eigvals)+1)
