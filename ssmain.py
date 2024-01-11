@@ -15,6 +15,56 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 
+# Create all combinations and index them from 'com1' to 'com16'
+combinations = list(product(vector1, vector2))
+combination_named_index = {f'com{index + 1}': combination for index, combination in enumerate(combinations)}
+
+selected_combination1 = combination_named_index['com1']
+selected_combination2 = combination_named_index['com2']
+
+if combination_named_index == 'selected_combination1':
+    st.write('You selected GFM_Droop and GFM_Droop.')
+else:
+    st.write("You didn\'t select GFM_Droop and GFM_Droop.")
+
+# sidebar
+sidebar1 = st.sidebar.selectbox(
+    "What control strategy do you want to select for the 1st inverter?",
+    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select control method...",
+)
+
+sidebar2 = st.sidebar.selectbox(
+    "What control strategy do you want to select for the 2nd inverter?",
+    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select control method...",
+)
+
+# Define the range of numbers
+#numbers = list(range(1, 10))  # This creates a list of numbers from 1 to 10
+
+#sidebar3 = st.sidebar.selectbox(
+#    "Which mode do you want to select?",
+#     numbers, index=0,
+#)
+
+# Use text_input for manual number input
+input_number = st.sidebar.text_input("Which mode do you want to select? (1-10)")
+
+# Check if the input is a number and within the desired range
+if input_number:
+    try:
+        # Convert input to an integer
+        number = int(input_number)
+
+        # Check if the number is in the range 1 to 10
+        if 1 <= number <= 10:
+            st.write('You entered:', number)
+        else:
+            st.error('Number out of range. Please enter a number between 1 and 10.')
+
+    except ValueError:
+        # Handle the case where input is not a number
+        st.error('Invalid input. Please enter a number.')
+
 ######################################
 # Define your images
 images = {
