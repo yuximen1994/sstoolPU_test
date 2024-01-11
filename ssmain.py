@@ -73,7 +73,7 @@ modeNames = ['col1','2','3','4','5','6','7','8','9','10','11','12','13','14','15
 df = pd.DataFrame(pmatrixabs, columns=modeNames)
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
-df.loc[df[modeNames[1]] < 0.02, 'statevariables'] = 'Other state variables'
+df.loc[df[modeNames[1]] < 0.02, 'statevariables'] = 'Other states'
 fig = px.pie(df, values=modeNames[1], names='statevariables', title='Participation factor analysis of mode 1')
 st.plotly_chart(fig, height=800, theme="streamlit")
 
