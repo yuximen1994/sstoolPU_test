@@ -69,17 +69,14 @@ if input_number:
     try:
         # Convert input to an integer
         number = int(input_number)
-
-        # Check if the number is in the range 1 to 10
+        # Check if the number is in the range
         if 1 <= number <= 10:
             st.write('You entered:', number)
         else:
             st.error('Number out of range. Please enter a number between 1 and 10.')
-
     except ValueError:
         # Handle the case where input is not a number
         st.error('Invalid input. Please enter a number.')
-
 
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
