@@ -32,7 +32,7 @@ sidebar2 = st.sidebar.selectbox(
 if (sidebar1,sidebar2) == ('GFM_Droop','GFM_Droop'):
     st.write('You selected GFM_Droop and GFM_Droop.')
 else:
-    st.write("You didn\'t select GFM_Droop and GFM_Droop.")
+    st.write("The selected combination is not supported.")
 
 sysData = case_3bus()
 x, xdot = lsm_sys(sysData)
