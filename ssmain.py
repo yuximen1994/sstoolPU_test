@@ -86,7 +86,7 @@ if input_number:
         st.error('Invalid input. Please enter a number.') # Handle the case where input is not a number
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(3,gap="large")
 with col1:
    st.plotly_chart(figheatmap, height=800, theme="streamlit")
 with col2:
