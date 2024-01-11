@@ -72,7 +72,7 @@ figpi = px.pie(values=pmatrix[:,number],
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ'],
                title='Population of European continent')
 figpi.update_layout(margin=dict(l=20, r=20, t=30, b=0),)
-    st.plotly_chart(figpi, use_container_width=True)
+st.plotly_chart(figpi, use_container_width=True)
 # Check if the input is a number and within the desired range
 if input_number:
     try:
