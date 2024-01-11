@@ -67,28 +67,23 @@ fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
 
 # Use text_input for manual number input
-number = 1
-input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(numeigs)+")",value='1')
+input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(numeigs)+")", value='1')
 number = int(input_number)
 
 # Check if the input is a number and within the desired range
 if input_number:
-    try:
-        # Convert input to an integer
-        number = int(input_number)
-        # Check if the number is in the range
-        if 1 <= number <= numeigs:
+    try:        
+        number = int(input_number) # Convert input to an integer        
+        if 1 <= number <= numeigs: # Check if the number is in the range
             df = pd.DataFrame(pmatrixabs, columns=modeNames)
-            df.insert(0, "statevariables", stateVariableNames, True)
-            # Represent state variables with a relatively larger participation factor
-            df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'
-            fig = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode'+str(number))
+            df.insert(0, "statevariables", stateVariableNames, True)           
+            df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
+            fig = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
             st.plotly_chart(fig, height=800, theme="streamlit")
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(numeigs)+'.')
-    except ValueError:
-        # Handle the case where input is not a number
-        st.error('Invalid input. Please enter a number.')
+    except ValueError:        
+        st.error('Invalid input. Please enter a number.') # Handle the case where input is not a number
 
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
