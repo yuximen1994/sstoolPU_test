@@ -64,7 +64,7 @@ figheatmap = px.imshow(pmatrixabs,
 figheatmap.update_layout(height=800)
 
 # Use text_input for manual number input
-input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(numeigs)+")", value='1')
+input_number = st.sidebar.text_input("Which mode do you want to select?", value='1') #(1-"+str(numeigs)+")
 number = int(input_number)
 # Check if the input is a number and within the desired range
 if input_number:
