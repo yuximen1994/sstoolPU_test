@@ -83,7 +83,7 @@ df = pd.DataFrame(pmatrixabs, columns=['col1','2','3','4','5','6','7','8','9','1
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
 #df.loc[df['col1'] >= 0.1, 'statevariables'] = 'Other state variables'
-fig = px.pie(df, values='col1', names=statevariables, title='Population of European continent')
+fig = px.pie(df, values='col1', names='statevariables', title='Population of European continent')
 st.plotly_chart(fig, height=800, theme="streamlit")
 
 # Check if the input is a number and within the desired range
