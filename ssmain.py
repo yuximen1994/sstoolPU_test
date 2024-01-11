@@ -75,6 +75,8 @@ if input_number:
             df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
             figpie = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
             figpie.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
+            st.text("real: ")
+            st.text("imag: ")
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(numeigs)+'.')
     except ValueError:        
