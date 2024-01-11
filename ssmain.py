@@ -64,7 +64,7 @@ st.plotly_chart(fig, height=800, theme="streamlit")
 NumElement = len(eigvals)
 
 # Use text_input for manual number input
-input_number = st.sidebar.text_input("Which mode do you want to select? (1-10)"+str(NumElement))
+input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
 
 # Check if the input is a number and within the desired range
 if input_number:
