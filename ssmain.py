@@ -65,40 +65,6 @@ if input_number:
         # Handle the case where input is not a number
         st.error('Invalid input. Please enter a number.')
 
-######################################
-# Define your images
-images = {
-     'GFM_Droop-GFM_Droop': 'fig/DroopDroop.png',
-     'GFM_Droop-GFM_VSM': 'fig/DroopVSM.png',
-     'GFM_Droop-GFL': 'fig/DroopGFL.png',
-     'GFM_Droop-SG': 'fig/SGDroop.png',
-     'GFM_VSM-GFM_Droop': 'fig/DroopVSM.png',
-     'GFM_VSM-GFM_VSM': 'fig/VSMVSM.png',
-     'GFM_VSM-GFL': 'fig/VSMGFL.png',
-     'GFM_VSM-SG': 'fig/SGVSM.png',
-     'GFL-GFM_Droop': 'fig/DroopGFL.png',
-     'GFL-GFM_VSM': 'fig/VSMGFL.png',
-     'GFL-SG': 'fig/SGGFL.png',
-     'SG-GFM_Droop': 'fig/SGDroop.png',
-     'SG-GFM_VSM': 'fig/SGVSM.png',
-     'SG-GFL': 'fig/SGGFL.png',
-     'SG-SG': 'fig/SGSG.png',
-}
-
-# Create the selectboxes
-selectbox1 = st.selectbox('What control strategy do you want to select for the 1st inverter?', ['GFM_Droop', 'GFM_VSM', 'GFL', 'SG'], index=None, placeholder="Select control method...",)
-selectbox2 = st.selectbox('What control strategy do you want to select for the 2nd inverter?', ['GFM_Droop', 'GFM_VSM', 'GFL', 'SG'], index=None, placeholder="Select control method...",)
-
-# Determine which image to display
-selected_image = images.get(f'{selectbox1}-{selectbox2}')
-
-# Display the image
-if selected_image:
-    st.image(selected_image)
-else:
-    st.write("No control diagram available.")
-######################################
-
 
 sysData = case_3bus()
 x, xdot = lsm_sys(sysData)
