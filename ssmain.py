@@ -23,7 +23,7 @@ combination_named_index = {f'com{index + 1}': combination for index, combination
 selected_combination1 = combination_named_index['com1']
 selected_combination2 = combination_named_index['com2']
 
-if combination_named_index == 'selected_combination1':
+if combination_named_index == (GFM_Droop,GFM_Droop):
     st.write('You selected GFM_Droop and GFM_Droop.')
 else:
     st.write("You didn\'t select GFM_Droop and GFM_Droop.")
