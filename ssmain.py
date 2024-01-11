@@ -15,29 +15,20 @@ st.set_page_config(layout="wide")
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
-
 # Create all combinations and index them from 'com1' to 'com16'
 combinations = list(product(vector1, vector2))
 combination_named_index = {f'com{index + 1}': combination for index, combination in enumerate(combinations)}
-
 selected_combination1 = combination_named_index['com1']
 selected_combination2 = combination_named_index['com2']
-
-
-
 # sidebar
 sidebar1 = st.sidebar.selectbox(
     "What configuration do you want to select for the 1st generator?",
-    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select configuration...",
+    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=0, placeholder="Select configuration...",
 )
 sidebar2 = st.sidebar.selectbox(
     "What configuration do you want to select for the 2nd generator?",
-    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select configuration...",
+    ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=0, placeholder="Select configuration...",
 )
-
-st.text(sidebar1)
-st.text(sidebar2)
-
 if (sidebar1,sidebar2) == ('GFM_Droop','GFM_Droop'):
     st.write('You selected GFM_Droop and GFM_Droop.')
 else:
