@@ -69,7 +69,7 @@ st.plotly_chart(fig, height=800, theme="streamlit")
 # Use text_input for manual number input
 #input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
 #number = int(input_number)
-modeNames = ['col1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34']
+#modeNames = ['col1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34']
 df = pd.DataFrame(pmatrixabs, columns=modeNames)
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
