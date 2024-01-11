@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import math
 import plotly.express as px
+import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 from ssfunc import pf_calc
@@ -81,7 +82,7 @@ st.pyplot(figpie)
 df = pd.DataFrame(pmatrixabs, columns=stateVariableNames)
 # Represent state variables with a relatively larger participation factor
 #df.loc[df[stateVariableNames(1)] >= 0.2, 'state variables'] = 'Other state variables'
-fig = px.pie(df, values='theta1', names='state variables', title='Population of European continent')
+fig = px.pie(df, values='theta1', names=stateVariableNames, title='Population of European continent')
 fig.show()
 
 # Check if the input is a number and within the desired range
