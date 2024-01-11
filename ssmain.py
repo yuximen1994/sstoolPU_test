@@ -89,7 +89,7 @@ if input_number:
 
 col1, col2 = st.columns(2,gap="small")
 with col1:
-    st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
+    st.plotly_chart(figheatmap, height=1000, theme="streamlit",use_container_width=True)
 with col2:
     st.plotly_chart(figpie1, height=400, theme="streamlit",use_container_width=True)
     st.plotly_chart(figpie2, height=400, theme="streamlit",use_container_width=True)
