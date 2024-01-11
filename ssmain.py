@@ -73,13 +73,13 @@ if input_number:
         if 1 <= number <= numeigs: # Check if the number is in the range
             df1 = pd.DataFrame(pmatrixabs, columns=modeNames)
             df1.insert(0, "statevariables", stateVariableNames, True)           
-            df1.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
-            figpie1 = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
+            df1.loc[df1[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
+            figpie1 = px.pie(df1, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
             figpie1.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
             df2 = pd.DataFrame(pmatrixabs, columns=modeNames)
             df2.insert(0, "statevariables", stateVariableNames, True)           
-            df2.loc[df[modeNames[number]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
-            figpie2 = px.pie(df, values=modeNames[number], names='statevariables', title='Participation factor analysis of mode '+str(number+1))
+            df2.loc[df2[modeNames[number]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
+            figpie2 = px.pie(df2, values=modeNames[number], names='statevariables', title='Participation factor analysis of mode '+str(number+1))
             figpie2.update_layout(title={'text':'Participation factor analysis of mode '+str(number+1),'x':0.415,'xanchor':'center'})
         
         else:
