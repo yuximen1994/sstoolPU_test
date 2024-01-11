@@ -80,9 +80,10 @@ st.pyplot(figpie)
 
 
 df = pd.DataFrame(pmatrixabs, columns=stateVariableNames)
+df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
-#df.loc[df[stateVariableNames(1)] >= 0.2, 'state variables'] = 'Other state variables'
-fig = px.pie(df, values='theta1', names=stateVariableNames, title='Population of European continent')
+df.loc[df[stateVariableNames(1)] >= 0.1, 'statevariables'] = 'Other state variables'
+fig = px.pie(df, values='theta1', names=statevariables, title='Population of European continent')
 st.plotly_chart(fig, height=800, theme="streamlit")
 
 # Check if the input is a number and within the desired range
