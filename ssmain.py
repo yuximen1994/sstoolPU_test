@@ -94,7 +94,7 @@ with col2:
 # plot table
 colnew1, colnew2, colnew3 = st.columns(3,gap="small")
 with colnew1:
-    
+    st.text("")
 with colnew2:
     mode = range(1,len(eigvals)+1)
     realpart = eigvals.real
@@ -106,5 +106,5 @@ with colnew2:
                       columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
     st.table(df)
 with colnew3:
-    
+    st.text("")
 
