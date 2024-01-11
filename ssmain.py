@@ -79,9 +79,9 @@ st.pyplot(figpie)
 
 
 df = pd.DataFrame(pmatrixabs, columns=stateVariableNames)
-# Represent only state variables with relatively larger participation factor
-df.loc[df[stateVariableNames(1)] >= 0.2, 'state variable'] = 'Other state variables'
-fig = px.pie(df, values='stateVariableNames(1)', names='state variables', title='Population of European continent')
+# Represent state variables with a relatively larger participation factor
+#df.loc[df[stateVariableNames(1)] >= 0.2, 'state variables'] = 'Other state variables'
+fig = px.pie(df, values='theta1', names='state variables', title='Population of European continent')
 fig.show()
 
 # Check if the input is a number and within the desired range
