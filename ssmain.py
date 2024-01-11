@@ -27,12 +27,12 @@ else:
 
 # sidebar
 sidebar1 = st.sidebar.selectbox(
-    "What control strategy do you want to select for the 1st inverter?",
+    "What configuration do you want to select for the 1st generator?",
     ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select control method...",
 )
 
 sidebar2 = st.sidebar.selectbox(
-    "What control strategy do you want to select for the 2nd inverter?",
+    "What configuration do you want to select for the 2nd generator?",
     ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select control method...",
 )
 
