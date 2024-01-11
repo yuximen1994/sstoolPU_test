@@ -11,8 +11,7 @@ from ssfunc import lsm_sys
 from ssdata import case_3bus
 from itertools import product
 
-st.set_page_config(layout="wide")
-
+#st.set_page_config(layout="wide")
 st.image('fig/TestSystem.png', width=1000, caption='System configuration')
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
