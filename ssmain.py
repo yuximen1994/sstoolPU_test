@@ -85,7 +85,7 @@ with col1:
    st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
    st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
-   st.text("real: ")
+   st.markdown('<div style="text-align: center;">real:</div>', unsafe_allow_html=True)
    st.text("imag: ")
 
 # plot table
