@@ -13,6 +13,8 @@ from itertools import product
 
 st.set_page_config(layout="wide")
 
+st.image('fig/TestSystem.png', caption='System configuration')
+
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 # Create all combinations and index them from 'com1' to 'com16'
