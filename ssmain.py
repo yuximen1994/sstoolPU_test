@@ -92,12 +92,18 @@ with col2:
     st.text("damp: "+str(-eigvalsi.real/np.sqrt(eigvalsi.real*eigvalsi.real+eigvalsi.imag*eigvalsi.imag)))
 
 # plot table
-mode = range(1,len(eigvals)+1)
-realpart = eigvals.real
-imagpart = eigvals.imag
-frequency = eigvals.imag/2/math.pi
-dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
-list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
-df = pd.DataFrame(list_of_tuples,
-                 columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
-st.table(df)
+colnew1, colnew2, colnew3 = st.columns(3,gap="small")
+with colnew1:
+with colnew2:
+    mode = range(1,len(eigvals)+1)
+    realpart = eigvals.real
+    imagpart = eigvals.imag
+    frequency = eigvals.imag/2/math.pi
+    dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
+    list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
+    df = pd.DataFrame(list_of_tuples,
+                      columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
+    st.table(df)
+with colnew3:
+    
+
