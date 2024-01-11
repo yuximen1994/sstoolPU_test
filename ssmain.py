@@ -85,7 +85,8 @@ with col1:
     st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
     st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
-    str1 = 'gg'    st.markdown('<div style="text-align: center;">{str}</div>', unsafe_allow_html=True)
+    str1 = 'gg'    
+    st.markdown('<div style="text-align: center;">{str}</div>', unsafe_allow_html=True)
     st.text("imag: ")
 
 # plot table
