@@ -71,7 +71,8 @@ figpi = px.pie(values=pmatrix[:,number],
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ'],
                title='Population of European continent')
-st.pyplot(figpi)
+figpi.update_layout(margin=dict(l=20, r=20, t=30, b=0),)
+    st.plotly_chart(figpi, use_container_width=True)
 # Check if the input is a number and within the desired range
 if input_number:
     try:
