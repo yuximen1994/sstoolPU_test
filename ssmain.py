@@ -11,6 +11,8 @@ from ssfunc import lsm_sys
 from ssdata import case_3bus
 from itertools import product
 
+st.set_page_config(layout="wide")
+
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 
