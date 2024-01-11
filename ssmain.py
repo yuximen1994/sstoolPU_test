@@ -85,7 +85,7 @@ with col1:
     st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
     st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
-    eigvalsi = eigvals(number-1)  
+    eigvalsi = eigvals[number-1]  
     st.text("real: "+str(eigvalsi.real))
     st.text("imag: "+str(eigvalsi.imag))
     st.text("freq: "+str(eigvalsi.imag/2/math.pi)+" Hz")
