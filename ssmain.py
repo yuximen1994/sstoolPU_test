@@ -82,7 +82,7 @@ st.pyplot(figpie)
 df = pd.DataFrame(pmatrixabs, columns=['col1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34'])
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
-#df.loc[df['col1'] >= 0.1, 'statevariables'] = 'Other state variables'
+df.loc[df['col1'] > 0.1, 'statevariables'] = 'Other state variables'
 fig = px.pie(df, values='col1', names='statevariables', title='Population of European continent')
 st.plotly_chart(fig, height=800, theme="streamlit")
 
