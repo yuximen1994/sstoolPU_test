@@ -49,21 +49,22 @@ for i in range(len(Xss)):
 
 Asys = np.array(Asys).astype(np.float64)
 eigvals, eigenvectors = np.linalg.eig(Asys)
+numeigs = len(eigvals)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 pmatrixabs = abs(pmatrix)
 stateVariableNames = ['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','iid1','iiq1','vcd1','vcq1','iod1','ioq1',
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ']
+modeNames = [ 'mode{}'.format(i) for i in range(1,numeigs)]
 
+# plot participation factor map
 fig = px.imshow(pmatrixabs,
                 labels=dict(x="modes", y="state variables"),
                 x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34],
                 y = stateVariableNames)
 fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
-
-NumElement = len(eigvals)
 
 # Use text_input for manual number input
 #input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
@@ -83,7 +84,7 @@ df = pd.DataFrame(pmatrixabs, columns=['col1','2','3','4','5','6','7','8','9','1
 df.insert(0, "statevariables", stateVariableNames, True)
 # Represent state variables with a relatively larger participation factor
 df.loc[df['col1'] < 0.02, 'statevariables'] = 'Other state variables'
-fig = px.pie(df, values='col1', names='statevariables', title='Population of European continent')
+fig = px.pie(df, values='col1', names='statevariables', title='Participation factor analysis of mode 1')
 st.plotly_chart(fig, height=800, theme="streamlit")
 
 # Check if the input is a number and within the desired range
