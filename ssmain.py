@@ -35,26 +35,6 @@ sidebar2 = st.sidebar.selectbox(
     ("GFM_Droop", "GFM_VSM", "GFL", "SG"), index=None, placeholder="Select configuration...",
 )
 
-# Use text_input for manual number input
-input_number = st.sidebar.text_input("Which mode do you want to select? (1-10)")
-
-# Check if the input is a number and within the desired range
-if input_number:
-    try:
-        # Convert input to an integer
-        number = int(input_number)
-
-        # Check if the number is in the range 1 to 10
-        if 1 <= number <= 10:
-            st.write('You entered:', number)
-        else:
-            st.error('Number out of range. Please enter a number between 1 and 10.')
-
-    except ValueError:
-        # Handle the case where input is not a number
-        st.error('Invalid input. Please enter a number.')
-
-
 sysData = case_3bus()
 x, xdot = lsm_sys(sysData)
 Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
@@ -80,6 +60,26 @@ fig = px.imshow(abs(pmatrix),
                 )
 fig.update_layout(height=800)
 st.plotly_chart(fig, height=800, theme="streamlit")
+
+# Use text_input for manual number input
+input_number = st.sidebar.text_input("Which mode do you want to select? (1-10)")
+
+# Check if the input is a number and within the desired range
+if input_number:
+    try:
+        # Convert input to an integer
+        number = int(input_number)
+
+        # Check if the number is in the range 1 to 10
+        if 1 <= number <= 10:
+            st.write('You entered:', number)
+        else:
+            st.error('Number out of range. Please enter a number between 1 and 10.')
+
+    except ValueError:
+        # Handle the case where input is not a number
+        st.error('Invalid input. Please enter a number.')
+
 
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
