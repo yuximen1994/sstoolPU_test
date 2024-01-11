@@ -57,6 +57,7 @@ stateVariableNames = ['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ']
 modeNames = ['mode{}'.format(i) for i in range(1,34)]
+st.write('You entered:', modeNames)
 
 # plot participation factor map
 fig = px.imshow(pmatrixabs,
