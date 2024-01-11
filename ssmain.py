@@ -59,7 +59,6 @@ stateVariableNames = ['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
                      'ibranchD1','ibranchQ1','ibranchD2','ibranchQ2','iloadD','iloadQ']
 modeNames = ['mode{}'.format(i) for i in range(1,numeigs+1)]
-
 # plot participation factor map
 figheatmap = px.imshow(pmatrixabs,
                        labels=dict(x="modes", y="state variables"),
@@ -67,11 +66,9 @@ figheatmap = px.imshow(pmatrixabs,
                        y = stateVariableNames)
 figheatmap.update_layout(height=800)
 
-
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(numeigs)+")", value='1')
 number = int(input_number)
-
 # Check if the input is a number and within the desired range
 if input_number:
     try:        
@@ -87,14 +84,13 @@ if input_number:
     except ValueError:        
         st.error('Invalid input. Please enter a number.') # Handle the case where input is not a number
 
-
 col1, col2 = st.columns(2,gap="small")
 with col1:
    st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
    st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
 
-
+# plot table
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
 imagpart = eigvals.imag
@@ -103,6 +99,4 @@ dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
 list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
 df = pd.DataFrame(list_of_tuples,
                  columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
-
-
 st.table(df)
