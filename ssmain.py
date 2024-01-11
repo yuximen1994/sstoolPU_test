@@ -103,7 +103,7 @@ with colnew2:
     dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
     list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
     df = pd.DataFrame(list_of_tuples,
-                      columns = ["mode", "real", "image", "Frequency(Hz)", "damping ratio"])
+                      columns = ["mode", "real", "image", "freq(Hz)", "damping ratio"])
     st.table(df)
 with colnew3:
     st.text("")
