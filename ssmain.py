@@ -12,6 +12,9 @@ from itertools import product
 
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
+vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
+vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
+
 ######################################
 # Define your images
 images = {
