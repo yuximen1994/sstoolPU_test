@@ -71,7 +71,7 @@ labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
 sizes = [15, 30, 45, 10]
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 figpie, axpie = plt.subplots()
-axpie.pie([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34], explode=np.zeros((1,34)), labels=stateVariableNames, autopct='%1.1f%%',
+axpie.pie([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34], explode=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], labels=stateVariableNames, autopct='%1.1f%%',
           shadow=False, startangle=90)
 axpie.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(figpie)
