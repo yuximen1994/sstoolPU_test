@@ -73,8 +73,8 @@ if input_number:
         number = int(input_number)
         # Check if the number is in the range
         if 1 <= number <= NumElement:
-            fig = px.pie(pmatrix[number,:], values='pop', names='country', title='Population of European continent')
-            st.plotly_chart(fig, use_container_width=True)
+            #fig = px.pie(pmatrix[number,:], values='pop', names='country', title='Population of European continent')
+            #st.plotly_chart(fig, use_container_width=True)
             st.write('You entered:', number)
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(NumElement)+'.')
