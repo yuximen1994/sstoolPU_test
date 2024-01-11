@@ -83,7 +83,7 @@ df = pd.DataFrame(pmatrixabs, columns=stateVariableNames)
 # Represent state variables with a relatively larger participation factor
 #df.loc[df[stateVariableNames(1)] >= 0.2, 'state variables'] = 'Other state variables'
 fig = px.pie(df, values='theta1', names=stateVariableNames, title='Population of European continent')
-fig.show()
+st.plotly_chart(fig, height=800, theme="streamlit")
 
 # Check if the input is a number and within the desired range
 if input_number:
