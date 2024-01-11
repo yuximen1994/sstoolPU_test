@@ -71,11 +71,17 @@ if input_number:
     try:        
         number = int(input_number) # Convert input to an integer        
         if 1 <= number <= numeigs: # Check if the number is in the range
-            df = pd.DataFrame(pmatrixabs, columns=modeNames)
-            df.insert(0, "statevariables", stateVariableNames, True)           
-            df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
-            figpie = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
-            figpie.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
+            df1 = pd.DataFrame(pmatrixabs, columns=modeNames)
+            df1.insert(0, "statevariables", stateVariableNames, True)           
+            df1.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
+            figpie1 = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
+            figpie1.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
+            df2 = pd.DataFrame(pmatrixabs, columns=modeNames)
+            df2.insert(0, "statevariables", stateVariableNames, True)           
+            df2.loc[df[modeNames[number]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
+            figpie2 = px.pie(df, values=modeNames[number], names='statevariables', title='Participation factor analysis of mode '+str(number+1))
+            figpie2.update_layout(title={'text':'Participation factor analysis of mode '+str(number+1),'x':0.415,'xanchor':'center'})
+        
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(numeigs)+'.')
     except ValueError:        
@@ -85,12 +91,13 @@ col1, col2 = st.columns(2,gap="small")
 with col1:
     st.plotly_chart(figheatmap, height=800, theme="streamlit",use_container_width=True)
 with col2:
-    st.plotly_chart(figpie, height=800, theme="streamlit",use_container_width=True)
-    eigvalsi = eigvals[number-1]  
-    st.text("real: "+str(eigvalsi.real))
-    st.text("imag: "+str(eigvalsi.imag))
-    st.text("freq: "+str(eigvalsi.imag/2/math.pi)+" Hz")
-    st.text("damp: "+str(-eigvalsi.real/np.sqrt(eigvalsi.real*eigvalsi.real+eigvalsi.imag*eigvalsi.imag)))
+    st.plotly_chart(figpie1, height=800, theme="streamlit",use_container_width=True)
+    st.plotly_chart(figpie2, height=800, theme="streamlit",use_container_width=True)
+    #eigvalsi = eigvals[number-1]  
+    #st.text("real: "+str(eigvalsi.real))
+    #st.text("imag: "+str(eigvalsi.imag))
+    #st.text("freq: "+str(eigvalsi.imag/2/math.pi)+" Hz")
+    #st.text("damp: "+str(-eigvalsi.real/np.sqrt(eigvalsi.real*eigvalsi.real+eigvalsi.imag*eigvalsi.imag)))
 
 # plot table
 colnew1, colnew2, colnew3 = st.columns(3,gap="small")
