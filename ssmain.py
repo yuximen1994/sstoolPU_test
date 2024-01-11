@@ -66,6 +66,17 @@ NumElement = len(eigvals)
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(NumElement)+")")
 number = int(input_number)
+
+labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+sizes = [15, 30, 45, 10]
+explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+figpie, axpie = plt.subplots()
+aspie.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+          shadow=True, startangle=90)
+axpie.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+st.pyplot(figpie)
+
 figpi = px.pie(values=pmatrix[:,number],
                names=['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','iid1','iiq1','vcd1','vcq1','iod1','ioq1',
                      'theta2','epsilonL2','wf2','P02','Qo2','phid2','phiq2','gammad2','gammaq2','iid2','iiq2','vcd2','vcq2','iod2','ioq2',
