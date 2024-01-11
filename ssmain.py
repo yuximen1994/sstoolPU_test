@@ -59,12 +59,12 @@ stateVariableNames = ['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','
 modeNames = ['mode{}'.format(i) for i in range(1,numeigs+1)]
 
 # plot participation factor map
-fig = px.imshow(pmatrixabs,
-                labels=dict(x="modes", y="state variables"),
-                x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34],
-                y = stateVariableNames)
-fig.update_layout(height=800)
-st.plotly_chart(fig, height=800, theme="streamlit")
+figheatmap = px.imshow(pmatrixabs,
+                       labels=dict(x="modes", y="state variables"),
+                       x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34],
+                       y = stateVariableNames)
+figheatmap.update_layout(height=800)
+
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select? (1-"+str(numeigs)+")", value='1')
@@ -78,13 +78,21 @@ if input_number:
             df = pd.DataFrame(pmatrixabs, columns=modeNames)
             df.insert(0, "statevariables", stateVariableNames, True)           
             df.loc[df[modeNames[number-1]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
-            fig = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
-            fig.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
-            st.plotly_chart(fig, height=800, theme="streamlit")
+            figpie = px.pie(df, values=modeNames[number-1], names='statevariables', title='Participation factor analysis of mode '+str(number))
+            figpie.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center'})
+            st.plotly_chart(figpie, height=800, theme="streamlit")
         else:
             st.error('Number out of range. Please enter a number between 1 and '+str(numeigs)+'.')
     except ValueError:        
         st.error('Invalid input. Please enter a number.') # Handle the case where input is not a number
+
+
+col1, col2, col3 = st.columns(3)
+with col1:
+   st.plotly_chart(figheatmap, height=800, theme="streamlit")
+with col2:
+   st.plotly_chart(figpie, height=800, theme="streamlit")
+
 
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
