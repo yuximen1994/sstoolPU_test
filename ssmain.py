@@ -69,7 +69,7 @@ lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 pmatrixabs = abs(pmatrix)
 
-st.text(pmatrixabs)
+st.text(len(pmatrixabs))
 
 modeNames = ['mode{}'.format(i) for i in range(1,numeigs+1)]
 # plot participation factor map
