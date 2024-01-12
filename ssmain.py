@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 from ssfunc import pf_calc
 from ssfunc import lsm_sys_2droop
 from ssfunc import lsm_sys_droop_gfl
-from ssdata import case_3bus
+from ssdata import case_3bus_2droop
+from ssdata import case_3bus_droop_gfl
 from itertools import product
 
 st.set_page_config(layout="wide")
