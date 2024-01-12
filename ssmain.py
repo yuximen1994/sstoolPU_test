@@ -32,6 +32,17 @@ sidebar2 = st.sidebar.selectbox(
 )
 if (sidebar1,sidebar2) == ('GFM_Droop','GFM_Droop'):
     st.write('You selected GFM_Droop and GFM_Droop.')
+    sysData = case_3bus_2droop()
+    x, xdot = lsm_sys_droop_gfl(sysData)
+    Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
+          -0.1388,0.0386,-0.1930,0.5132,-0.1407,0.9993,0.5147,0.1411,
+           0.1452,-0.0386,0.0844,-0.0002,0.5228,-0.1388,0.0386,-0.1930,
+           0.5132,-0.1407,1.0249,-0.2814,0.5127,-0.1407,0.5127,-0.1407]
+    st.write(Xss)
+else if: (sidebar1,sidebar2) == ('GFM_Droop','GFL'):
+    st.write('You selected GFM_Droop and GFL.')
+else if: (sidebar1,sidebar2) == ('GFL','GFM_Droop'):
+    st.write('You selected GFL and GFM_Droop.')
 else:
     st.write("The selected combination is not supported.")
 
