@@ -49,7 +49,7 @@ else:
     st.write("The selected combination is not supported.")
 
 sysData = case_3bus_droop_gfl()
-x, xdot = lsm_sys_2droop(sysData)
+x, xdot = lsm_sys_droop_gfl(sysData)
 Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
        -0.1388,0.0386,-0.1930,0.5132,-0.1407,0.0000,0.0000,0.9993,
        0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,-0.1388,
