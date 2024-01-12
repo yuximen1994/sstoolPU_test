@@ -35,7 +35,7 @@ sidebar2 = st.sidebar.selectbox(
 if (sidebar1,sidebar2) == ('GFM_Droop','GFM_Droop'):
     st.write('You selected GFM_Droop and GFM_Droop.')
     sysData = case_3bus_2droop()
-    x, xdot = lsm_sys_droop_gfl(sysData)
+    x, xdot = lsm_sys_2droop(sysData)
     Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
           -0.1388,0.0386,-0.1930,0.5132,-0.1407,0.9993,0.5147,0.1411,
            0.1452,-0.0386,0.0844,-0.0002,0.5228,-0.1388,0.0386,-0.1930,
