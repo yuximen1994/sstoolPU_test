@@ -7,7 +7,8 @@ import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 from ssfunc import pf_calc
-from ssfunc import lsm_sys
+from ssfunc import lsm_sys_2droop
+from ssfunc import lsm_sys_droop_gfl
 from ssdata import case_3bus
 from itertools import product
 
