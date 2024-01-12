@@ -70,10 +70,10 @@ class GFL_IBR:
         self.wc = wc
         self.wcf = wcf
 
-def case_3bus():
+def case_3bus_droop_gfl():
     baseVA = 100e6
     wbase = 2*math.pi*60
-    isFrequencyKnown = True
+    isFrequencyKnown = False
     Rx = 2e3
     bus = pd.DataFrame([[1,'Bus1','PQ-Ref',13.8e3],
                         [2,'Bus2','PQ',13.8e3],
@@ -83,6 +83,22 @@ def case_3bus():
     load = [Load(3,0.90,0.20)]
     generator = [GFM_IBR(0.05,0.05,0.5,0.2,1.0,1.0,0.00,0.00,0.6,3.6,0.6,12.0,0.02,0.10,100,0.05,0.01,0.05,31.4159),
                  GFL_IBR(0.05,0.05,0.5,0.2,1.0,1.0,1.20,36.0,0.6,3.6,0.6,12.0,0.02,0.10,100,0.05,0.01,0.05,31.4159,100)]
+    sysData = Data(baseVA,wbase,isFrequencyKnown,Rx,bus,branch,load,generator)    
+    return sysData
+
+def case_3bus_2droop():
+    baseVA = 100e6
+    wbase = 2*math.pi*60
+    isFrequencyKnown = False
+    Rx = 2e3
+    bus = pd.DataFrame([[1,'Bus1','PQ-Ref',13.8e3],
+                        [2,'Bus2','PQ',13.8e3],
+                        [3,'Bus3','PQ',13.8e3]])
+    branch = [Branch(1,3,0.01,0.05),
+              Branch(2,3,0.01,0.05)]
+    load = [Load(3,0.90,0.20)]
+    generator = [GFM_IBR(0.05,0.05,0.2,0.2,1.0,1.0,0.00,0.00,0.6,3.6,0.6,12.0,0.02,0.10,100,0.05,0.01,0.05,31.4159),
+                 GFM_IBR(0.05,0.05,0.8,0.2,1.0,1.0,0.00,0.00,0.6,3.6,0.6,12.0,0.02,0.10,100,0.05,0.01,0.05,31.4159)]
     sysData = Data(baseVA,wbase,isFrequencyKnown,Rx,bus,branch,load,generator)    
     return sysData
     
