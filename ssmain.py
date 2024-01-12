@@ -37,7 +37,7 @@ if (sidebar1,sidebar2) == ('GFM_Droop','GFM_Droop'):
     sysData = case_3bus_2droop()
     x, xdot = lsm_sys_2droop(sysData)
     Xss = [0.0000,0.5147,0.1411,0.1452,-0.0386,0.0844,-0.0002,0.5228,
-          -0.1388,0.0386,-0.1930,0.5132,-0.1407,0.9993,0.5147,0.1411,
+           -0.1388,0.0386,-0.1930,0.5132,-0.1407,0.9993,0.5147,0.1411,
            0.1452,-0.0386,0.0844,-0.0002,0.5228,-0.1388,0.0386,-0.1930,
            0.5132,-0.1407,1.0249,-0.2814,0.5127,-0.1407,0.5127,-0.1407]
     stateVariableNames = ['theta1','P01','Qo1','phid1','phiq1','gammad1','gammaq1','iid1','iiq1','vcd1','vcq1','iod1','ioq1',
@@ -68,6 +68,8 @@ numeigs = len(eigvals)
 lefteigenvectors = np.linalg.inv(eigenvectors)
 pmatrix = np.multiply(eigenvectors,np.transpose(lefteigenvectors))
 pmatrixabs = abs(pmatrix)
+
+st.text(numeigs)
 
 modeNames = ['mode{}'.format(i) for i in range(1,numeigs+1)]
 # plot participation factor map
