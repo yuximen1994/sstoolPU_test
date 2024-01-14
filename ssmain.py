@@ -176,7 +176,7 @@ styled_html = f"""
         border-collapse: collapse;
     }}
     th, td {{
-        border: 1px solid black;
+        border: 20px solid black;
         padding: 10px;
         text-align: left;
     }}
