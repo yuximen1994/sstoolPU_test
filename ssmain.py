@@ -14,8 +14,9 @@ from ssdata import case_3bus_droop_gfl
 from itertools import product
 
 st.set_page_config(layout="wide")
-st.image('fig/TestSystem.png', caption='System Configuration')
-
+# st.image('fig/TestSystem.png', caption='System Configuration')
+st.image('fig/TestSystem.png', caption=" ")
+caption = "System Configuration"
 st.markdown(f"<h5 style='text-align: center; color: black;'>{caption}</h5>", unsafe_allow_html=True)
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
