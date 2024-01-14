@@ -19,26 +19,19 @@ st.set_page_config(layout="wide")
 #caption = "System Configuration"
 #st.markdown(f"<h6 style='text-align: center; color: black;'>{caption}</h6>", unsafe_allow_html=True) # Update Font size and color (h6=14px)
 
-st.image('fig/TestSystem.png', caption=" ")
+st.image('fig/TestSystem.png')
 caption_html = """
-<div style="
+<p style='
     text-align: center;
-    color: blue;            /* Font color */
-    font-size: 16px;        /* Font size */
-    font-family: Arial;     /* Font family */
-">
+    color: black;          
+    font-size: 14px;        
+    font-family: Arial;    
+'>
     System Configuration
-</div>
+</p>
 """
-#caption = "System Configuration"
-#caption_html = f""" 
-#<p style='text-align: center;
-#           color: black;           
-#           font-size: 18px;        
-#           font-family: Arial;'>   
-#    {caption}
-#</p>
-#"""
+st.markdown(caption_html, unsafe_allow_html=True)
+
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
