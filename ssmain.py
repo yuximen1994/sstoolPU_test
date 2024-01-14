@@ -175,26 +175,28 @@ styled_html = f"""
         font-size: 14px;  
         border-collapse: collapse;
     }}
-#    th, td {{
-#        border: 1px solid black;
-#        padding: 5px;
-#        text-align: center;
-#        white-space: nowrap;  # Prevents text from wrapping
     th {{
         border: 1px solid black;
         padding: 8px;
         text-align: center;
         white-space: nowrap; 
     }}
+
+</style>
+{html}
+"""
+
 #    td {{
 #        border: 1px solid black;
 #        padding: 8px;
 #        text-align: left;
 #    }}
 
-</style>
-{html}
-"""
+#    th, td {{
+#        border: 1px solid black;
+#        padding: 5px;
+#        text-align: center;
+#        white-space: nowrap;  # Prevents text from wrapping
 
 # plot table
 colnew1, colnew2, colnew3 = st.columns(3, gap="small")
