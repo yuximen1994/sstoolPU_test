@@ -88,12 +88,17 @@ figheatmap = px.imshow(pmatrixabs,
                        labels=dict(x="modes", y="state variables"),
                        x = list(range(1,numeigs+1)),
                        y = stateVariableNames)
-figheatmap.update_layout(
-    height=800
-    xaxis_title='X-axis Label',
-    xaxis_title_font_size=16,
-    yaxis_title='Y-axis Label',
-    yaxis_title_font_size=16              
+figheatmap.update_layout(height=800)
+
+# Update the axes labels font size
+figheatmap.update_xaxes(
+    title_font=dict(size=18),  
+    tickfont=dict(size=14)     
+)
+
+figheatmap.update_yaxes(
+    title_font=dict(size=18),  # Adjust the size as needed
+    tickfont=dict(size=14)     # Adjust the size as needed
 )
 
 
