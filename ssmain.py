@@ -179,6 +179,7 @@ styled_html = f"""
         border: 1px solid black;
         padding: 5px;
         text-align: center;
+        white-space: nowrap;  # Prevents text from wrapping
 #    }}
 </style>
 {html}
