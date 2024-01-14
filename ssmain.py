@@ -186,11 +186,11 @@ styled_html = f"""
         text-align: center;
         white-space: nowrap; 
     }}
-    td {{
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }}
+#    td {{
+#        border: 1px solid black;
+#        padding: 8px;
+#        text-align: left;
+#    }}
 
 </style>
 {html}
