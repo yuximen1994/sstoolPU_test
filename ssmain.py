@@ -171,15 +171,15 @@ styled_html = f"""
 <style>
     table {{
         color: black;  
-        font-family: Times New Roman;  
-        font-size: 20px;  
+        font-family: Arial;  
+        font-size: 14px;  
         border-collapse: collapse;
     }}
-    th, td {{
-        border: 20px solid black;
-        padding: 1px;
-        text-align: left;
-    }}
+#    th, td {{
+#        border: 20px solid black;
+#        padding: 1px;
+#        text-align: left;
+#    }}
 </style>
 {html}
 """
