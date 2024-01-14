@@ -17,7 +17,7 @@ st.set_page_config(layout="wide")
 # st.image('fig/TestSystem.png', caption='System Configuration')
 st.image('fig/TestSystem.png', caption=" ")
 caption = "System Configuration"
-st.markdown(f"<h5 style='text-align: center; color: black;'>{caption}</h5>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align: center; color: black;'>{caption}</h1>", unsafe_allow_html=True)
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
