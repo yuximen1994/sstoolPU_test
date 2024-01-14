@@ -90,9 +90,9 @@ figheatmap = px.imshow(pmatrixabs,
                        y = stateVariableNames)
 figheatmap.update_layout(height=800)
 
-# Update the axes labels font size
-figheatmap.update_xaxes(title_font=dict(size=18,color='black',family='Arial'),tickfont=dict(size=14,color='black',family='Arial'))
-figheatmap.update_yaxes(title_font=dict(size=18,color='black',family='Arial'),tickfont=dict(size=14,color='black',family='Arial'))
+# Update font size, color and style
+figheatmap.update_xaxes(title_font=dict(size=18,color='black',family='Arial',style='bold'),tickfont=dict(size=14,color='black',family='Arial'))
+figheatmap.update_yaxes(title_font=dict(size=18,color='black',family='Arial',style='bold'),tickfont=dict(size=14,color='black',family='Arial'))
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select?", value='1') #(1-"+str(numeigs)+")
@@ -112,7 +112,7 @@ if input_number:
             df2.loc[df2[modeNames[number]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
             figpie2 = px.pie(df2, values=modeNames[number], names='statevariables', title='Participation factor analysis of mode '+str(number+1))
 
-            # Update Font size and color
+            # Update font size, color and style
             figpie1.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center','font': {'size': 18, 'color': 'black','family': 'Arial'}}) # Update the layout for the title
             figpie1.update_traces(textfont={'size': 14, 'color': 'black','family': 'Arial'}) # Update the traces for the labels inside the pie chart
             figpie1.update_layout(legend_title_font={'size': 14, 'color': 'black'}, legend_font={'size': 14, 'color': 'black','family': 'Arial'}) # Update the legend font size and color       
@@ -154,7 +154,7 @@ with col2:
 #with colnew3:
 #    st.text("")
 
-
+# Update font size, color and style
 mode = range(1,len(eigvals)+1)
 realpart = eigvals.real
 imagpart = eigvals.imag
