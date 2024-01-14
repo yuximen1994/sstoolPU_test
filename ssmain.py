@@ -183,20 +183,12 @@ styled_html = f"""
     }}
     td {{
         border: 1px solid black;
-        padding: 8px;
-        text-align: right;
+        padding: 1px;
+        text-align: left;
     }}
 </style>
 {html}
 """
-
-
-
-#    th, td {{
-#        border: 1px solid black;
-#        padding: 5px;
-#        text-align: center;
-#        white-space: nowrap;  # Prevents text from wrapping
 
 # plot table
 colnew1, colnew2, colnew3 = st.columns(3, gap="small")
