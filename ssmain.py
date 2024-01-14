@@ -91,8 +91,8 @@ figheatmap = px.imshow(pmatrixabs,
 figheatmap.update_layout(height=800)
 
 # Update the axes labels font size
-figheatmap.update_xaxes(title_font=dict(size=18,color='black','family': 'Times New Roman'),tickfont=dict(size=14,color='black'))
-figheatmap.update_yaxes(title_font=dict(size=18,color='black','family': 'Times New Roman'),tickfont=dict(size=14,color='black'))
+figheatmap.update_xaxes(title_font=dict(size=18,color='black','family':'Times New Roman'),tickfont=dict(size=14,color='black'))
+figheatmap.update_yaxes(title_font=dict(size=18,color='black','family':'Times New Roman'),tickfont=dict(size=14,color='black'))
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select?", value='1') #(1-"+str(numeigs)+")
