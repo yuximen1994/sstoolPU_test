@@ -17,7 +17,7 @@ st.set_page_config(layout="wide")
 # st.image('fig/TestSystem.png', caption='System Configuration')
 st.image('fig/TestSystem.png', caption=" ")
 caption = "System Configuration"
-st.markdown(f"<h5 style='text-align: center; color: black;'>{caption}</h5>", unsafe_allow_html=True)
+st.markdown(f"<h5 style='text-align: center; color: black;'>{caption}</h5>", unsafe_allow_html=True) # Update Font size and color
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
@@ -111,13 +111,11 @@ if input_number:
             df2.insert(0, "statevariables", stateVariableNames, True)           
             df2.loc[df2[modeNames[number]] < 0.02, 'statevariables'] = 'Other states'  # Represent state variables with a relatively larger participation factor
             figpie2 = px.pie(df2, values=modeNames[number], names='statevariables', title='Participation factor analysis of mode '+str(number+1))
-            
-            #figpie2.update_layout(title={'text':'Participation factor analysis of mode '+str(number+1),'x':0.415,'xanchor':'center'})
-            
-            figpie1.update_layout(title={'text':'Participation factor analysis of mode '+str(number+1),'x':0.415,'xanchor':'center','font': {'size': 20, 'color': 'black'}}) # Update the layout for the title
+
+            # Update Font size and color
+            figpie1.update_layout(title={'text':'Participation factor analysis of mode '+str(number),'x':0.415,'xanchor':'center','font': {'size': 20, 'color': 'black'}}) # Update the layout for the title
             figpie1.update_traces(textfont={'size': 14, 'color': 'black'}) # Update the traces for the labels inside the pie chart
-            figpie1.update_layout(legend_title_font={'size': 16, 'color': 'black'}, legend_font={'size': 14, 'color': 'black'}) # Update the legend font size and color
-            
+            figpie1.update_layout(legend_title_font={'size': 16, 'color': 'black'}, legend_font={'size': 14, 'color': 'black'}) # Update the legend font size and color       
             figpie2.update_layout(title={'text':'Participation factor analysis of mode '+str(number+1),'x':0.415,'xanchor':'center','font': {'size': 20, 'color': 'black'}}) # Update the layout for the title
             figpie2.update_traces(textfont={'size': 14, 'color': 'black'}) # Update the traces for the labels inside the pie chart
             figpie2.update_layout(legend_title_font={'size': 16, 'color': 'black'}, legend_font={'size': 14, 'color': 'black'}) # Update the legend font size and color
