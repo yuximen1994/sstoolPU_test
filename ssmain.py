@@ -138,19 +138,58 @@ with col2:
     #st.text("damp: "+str(-eigvalsi.real/np.sqrt(eigvalsi.real*eigvalsi.real+eigvalsi.imag*eigvalsi.imag)))
 
 # plot table
-colnew1, colnew2, colnew3 = st.columns(3,gap="small")
+#colnew1, colnew2, colnew3 = st.columns(3,gap="small")
+#with colnew1:
+#    st.text("")
+#with colnew2:
+#    mode = range(1,len(eigvals)+1)
+#    realpart = eigvals.real
+#    imagpart = eigvals.imag
+#    frequency = eigvals.imag/2/math.pi
+#    dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
+#    list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
+#    df = pd.DataFrame(list_of_tuples,
+#                      columns = ["mode", "real", "imag", "freq(Hz)", "damping ratio"])
+#    st.table(df)
+#with colnew3:
+#    st.text("")
+
+
+mode = range(1,len(eigvals)+1)
+realpart = eigvals.real
+imagpart = eigvals.imag
+frequency = eigvals.imag/2/math.pi
+dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
+list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
+df = pd.DataFrame(list_of_tuples,
+                      columns = ["mode", "real", "imag", "freq(Hz)", "damping ratio"])
+
+# Convert DataFrame to HTML and style it
+html = df.to_html(index=False)
+
+styled_html = f"""
+<style>
+    table {{
+        color: blue;  /* Change font color */
+        font-family: Arial;  /* Change font style */
+        font-size: 14px;  /* Change font size */
+        border-collapse: collapse;
+    }}
+    th, td {{
+        border: 1px solid black;
+        padding: 5px;
+        text-align: left;
+    }}
+</style>
+{html}
+"""
+# plot table
+colnew1, colnew2, colnew3 = st.columns(3, gap="small")
 with colnew1:
     st.text("")
+
 with colnew2:
-    mode = range(1,len(eigvals)+1)
-    realpart = eigvals.real
-    imagpart = eigvals.imag
-    frequency = eigvals.imag/2/math.pi
-    dampingratio = -eigvals.real/np.sqrt(realpart*realpart+imagpart*imagpart)
-    list_of_tuples = list(zip(mode, realpart, imagpart, frequency, dampingratio)) 
-    df = pd.DataFrame(list_of_tuples,
-                      columns = ["mode", "real", "imag", "freq(Hz)", "damping ratio"])
-    st.table(df)
+    st.markdown(styled_html, unsafe_allow_html=True)
+
 with colnew3:
     st.text("")
-
