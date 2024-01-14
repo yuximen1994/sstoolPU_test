@@ -172,12 +172,12 @@ styled_html = f"""
     table {{
         color: black;  
         font-family: Arial;  
-        font-size: 8px;  
+        font-size: 20px;  
         border-collapse: collapse;
     }}
     th, td {{
         border: 1px solid black;
-        padding: 5px;
+        padding: 10px;
         text-align: left;
     }}
 </style>
