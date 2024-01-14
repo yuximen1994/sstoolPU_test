@@ -17,7 +17,7 @@ st.set_page_config(layout="wide")
 # st.image('fig/TestSystem.png', caption='System Configuration')
 st.image('fig/TestSystem.png', caption=" ")
 caption = "System Configuration"
-st.markdown(f"<h1 style='text-align: center; color: black;'>{caption}</h1>", unsafe_allow_html=True)
+st.markdown(f"<h5 style='text-align: center; color: black;'>{caption}</h5>", unsafe_allow_html=True)
 
 vector1 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
 vector2 = ['GFM_Droop', '"GFM_VSM', 'GFL', 'SG']
@@ -88,7 +88,14 @@ figheatmap = px.imshow(pmatrixabs,
                        labels=dict(x="modes", y="state variables"),
                        x = list(range(1,numeigs+1)),
                        y = stateVariableNames)
-figheatmap.update_layout(height=800)
+figheatmap.update_layout(
+    height=800
+    xaxis_title='X-axis Label',
+    xaxis_title_font_size=16,
+    yaxis_title='Y-axis Label',
+    yaxis_title_font_size=16              
+)
+
 
 # Use text_input for manual number input
 input_number = st.sidebar.text_input("Which mode do you want to select?", value='1') #(1-"+str(numeigs)+")
