@@ -175,12 +175,23 @@ styled_html = f"""
         font-size: 14px;  
         border-collapse: collapse;
     }}
-    th, td {{
+#    th, td {{
+#        border: 1px solid black;
+#        padding: 5px;
+#        text-align: center;
+#        white-space: nowrap;  # Prevents text from wrapping
+    th {{
         border: 1px solid black;
-        padding: 5px;
+        padding: 8px;
         text-align: center;
-        white-space: nowrap;  # Prevents text from wrapping
-#    }}
+        white-space: nowrap; 
+    }}
+    td {{
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }}
+
 </style>
 {html}
 """
