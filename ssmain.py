@@ -24,8 +24,9 @@ caption_html = """
 <p style='
     text-align: center;
     color: black;          
-    font-size: 14px;        
-    font-family: Arial;    
+    font-size: 18px;        
+    font-family: Arial; 
+    font-weight: bold;
 '>
     System Configuration
 </p>
