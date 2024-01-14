@@ -170,9 +170,9 @@ html = df.to_html(index=False)
 styled_html = f"""
 <style>
     table {{
-        color: blue;  /* Change font color */
-        font-family: Arial;  /* Change font style */
-        font-size: 14px;  /* Change font size */
+        color: black;  
+        font-family: Arial;  
+        font-size: 8px;  
         border-collapse: collapse;
     }}
     th, td {{
@@ -183,6 +183,7 @@ styled_html = f"""
 </style>
 {html}
 """
+
 # plot table
 colnew1, colnew2, colnew3 = st.columns(3, gap="small")
 with colnew1:
