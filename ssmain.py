@@ -85,7 +85,7 @@ pmatrixabs = abs(pmatrix)
 modeNames = ['mode{}'.format(i) for i in range(1,numeigs+1)]
 # plot participation factor map
 figheatmap = px.imshow(pmatrixabs,
-                       labels=dict(x="**Modes**", y="**State Variables**"),
+                       labels=dict(x="**Modes", y="**State Variables"),
                        x = list(range(1,numeigs+1)),
                        y = stateVariableNames)
 figheatmap.update_layout(height=800)
