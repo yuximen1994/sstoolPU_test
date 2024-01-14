@@ -171,8 +171,8 @@ styled_html = f"""
 <style>
     table {{
         color: black;  
-        font-family: Arial;  
-        font-size: 20px;  
+        font-family: Times New Roman;  
+        font-size: 14px;  
         border-collapse: collapse;
     }}
 #    th, td {{
