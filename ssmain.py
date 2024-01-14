@@ -14,11 +14,6 @@ from ssdata import case_3bus_droop_gfl
 from itertools import product
 
 st.set_page_config(layout="wide")
-# st.image('fig/TestSystem.png', caption='System Configuration')
-#st.image('fig/TestSystem.png', caption=" ")
-#caption = "System Configuration"
-#st.markdown(f"<h6 style='text-align: center; color: black;'>{caption}</h6>", unsafe_allow_html=True) # Update Font size and color (h6=14px)
-
 st.image('fig/TestSystem.png')
 caption_html = """
 <p style='
