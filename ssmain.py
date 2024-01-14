@@ -172,7 +172,7 @@ styled_html = f"""
     table {{
         color: black;  
         font-family: Times New Roman;  
-        font-size: 14px;  
+        font-size: 20px;  
         border-collapse: collapse;
     }}
 #    th, td {{
