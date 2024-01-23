@@ -186,6 +186,7 @@ styled_html = f"""
         color: black;  
         font-family: Arial;  
         font-size: 14px;  
+        text-align: center;
         border-collapse: collapse;
     }}
     th {{
@@ -197,6 +198,7 @@ styled_html = f"""
     td {{
         border: 1px solid black;
         padding: 1px;
+        text-align: center;
         text-align: left;
     }}
 </style>
