@@ -199,7 +199,7 @@ styled_html = f"""
         border: 1px solid black;
         padding: 1px;
         text-align: center;
-        text-align: left;
+       # text-align: left;
     }}
 </style>
 {html}
